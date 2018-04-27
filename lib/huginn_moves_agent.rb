@@ -17,7 +17,7 @@ end
 begin
   require 'moves'
   require 'devise'
-  require 'oauth-moves'
+  require 'omniauth-moves'
 rescue LoadError
   HuginnMovesAgent.no_op
 end
