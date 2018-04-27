@@ -3,24 +3,9 @@
 require 'huginn_moves_agent/version'
 require 'huginn_agent'
 
-##
-# Auxiliary namespace for +HuginnMovesAgent+
-#
-module HuginnMovesAgent
-  class << self
-    def no_op
-    end
-  end
-end
-
-# Load the +moves+ gem, ignoring LoadErrors. This will allow Huginn to load successfully, showing "Missing Gems"
-begin
-  require 'moves'
-  require 'devise'
-  require 'omniauth-moves'
-rescue LoadError
-  HuginnMovesAgent.no_op
-end
+require 'moves'
+require 'devise'
+require 'omniauth-moves'
 
 ##
 # Configuration options for the Moves agent.
