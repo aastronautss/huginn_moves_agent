@@ -53,6 +53,6 @@ module MovesAgentable
   end
 
   def moves
-    Moves::Client.new
+    Moves::Client.new(moves_oauth_token)
   end
 end
