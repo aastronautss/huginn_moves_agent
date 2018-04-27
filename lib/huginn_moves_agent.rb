@@ -3,6 +3,16 @@
 require 'huginn_moves_agent/version'
 require 'huginn_agent'
 
+##
+# Auxiliary namespace for +HuginnMovesAgent+
+#
+module HuginnMovesAgent
+  class << self
+    def no_op
+    end
+  end
+end
+
 # Load the +moves+ gem, ignoring LoadErrors. This will allow Huginn to load successfully, showing "Missing Gems"
 begin
   require 'moves'
@@ -13,14 +23,9 @@ rescue LoadError
 end
 
 ##
-# Auxiliary namespace for +HuginnMovesAgent+
+# Configuration options for the Moves agent.
 #
 module HuginnMovesAgent
-  class << self
-    def no_op
-    end
-  end
-
   I18n.load_path << "#{File.dirname(__FILE__)}/locales/devise.en.yml"
 
   Devise.setup do |config|
