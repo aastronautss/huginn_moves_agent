@@ -24,3 +24,4 @@ end
 HuginnAgent.load 'huginn_moves_agent/concerns/moves_agentable'
 HuginnAgent.load 'huginn_moves_agent/service_option'
 HuginnAgent.register 'huginn_moves_agent/moves_agent'
+HuginnAgent.register 'huginn_moves_agent/moves_current_location_agent'
