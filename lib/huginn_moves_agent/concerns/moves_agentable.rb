@@ -24,6 +24,16 @@ module MovesAgentable
     MD
   end
 
+  module ClassMethods
+    def moves_dependencies_missing
+      if ENV['MOVES_OAUTH_KEY'].blank? || ENV['MOVES_OAUTH_SECRET'].blank?
+        '## Set MOVES_OAUTH_KEY and MOVES_OAUTH_SECRET in your environment to use Moves agents.'
+      elsif !defined?(Moves) || !Devise.omniauth_providers.include?(:moves)
+        '## Include `moves` and `omniauth-moves` in your Gemfile to use Moves agents.'
+      end
+    end
+  end
+
   def validate_options
     return if moves_oauth_token.present?
 
