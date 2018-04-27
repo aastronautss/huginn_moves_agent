@@ -22,6 +22,14 @@ module Agents
 
     default_schedule 'every_1h'
 
+    def default_options
+      {}
+    end
+
+    def working?
+      !recent_error_logs?
+    end
+
     def check
       day = Date.current
       storyline = moves.daily_storyline(trackpoints: true, from: day, to: day).map(&:with_indifferent_access)
