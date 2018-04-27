@@ -12,7 +12,6 @@ Metrics/LineLength:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
-
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
@@ -20,10 +19,7 @@ Layout/MultilineOperationIndentation:
 
 Style/DoubleNegation:
   Enabled: false
-
 Style/SymbolArray:
   EnforcedStyle: brackets
-
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/**/*'
+Style/EmptyMethod:
+  EnforcedStyle: expanded

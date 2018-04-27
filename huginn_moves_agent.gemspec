@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'huginn_agent'
   spec.add_runtime_dependency 'moves'
+  spec.add_runtime_dependency 'omniauth-moves'
 end
